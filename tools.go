@@ -77,9 +77,10 @@ func (t *Tools) ErrorJSON(w http.ResponseWriter, err error, status ...int) error
 		statusCode = status[0]
 	}
 
-	var payload jsonResponse
-	payload.Error = true
-	payload.Message = err.Error()
+	payload := JsonResponse{
+		Error:   true,
+		Message: err.Error(),
+	}
 
 	return t.WriteJSON(w, statusCode, payload)
 }
