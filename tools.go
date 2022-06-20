@@ -12,10 +12,10 @@ type Tools struct {
 }
 
 // JSONResponse is the type used for sending JSON around
-type jsonResponse struct {
+type JsonResponse struct {
 	Error   bool   `json:"error"`
 	Message string `json:"message"`
-	Port    string `json:"port"`
+	Port    string `json:"port,omitempty"`
 	Data    any    `json:"data,omitempty"`
 }
 
